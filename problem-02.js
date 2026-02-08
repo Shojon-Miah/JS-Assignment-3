@@ -14,7 +14,6 @@ function  validOtp(otp){
 }
 
 // console.log(validOtp({ right: ph-10985}));
-// console.log(validOtp("{"ph-10985"}"));
 // // console.log(validOtp(12554873));
 // console.log(validOtp("ph-1234"));
 // console.log(validOtp("ac-123745"));

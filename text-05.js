@@ -1,22 +1,21 @@
 //Problem-01: New Price for Eid Sale
-
 function newPrice(currentPrice, discount) {
 
     if (!Number.isFinite(currentPrice) || !Number.isFinite(discount)) {
         return "Invalid";
     }
-    else if (currentPrice < 0 || discount > 100) {
+    else if (discount < 0 ||  discount > 100) {
         return "Invalid";
     }
     else {
         let discountAmount = (currentPrice * discount) / 100;
         let finalPrice = currentPrice - discountAmount;
-        return finalPrice = finalPrice.toFixed(3);
+        return finalPrice.toFixed(3);
     }
 }
 
-//Problem-02: OTP Validation for Zapshift
 
+//Problem-02: OTP Validation for Zapshift
 function  validOtp(otp){
 
     if (typeof otp !== 'string'){
@@ -29,6 +28,7 @@ function  validOtp(otp){
         return false;
     }
 }
+
 
 //Problem-03: BCS Final Score Calculator
 
@@ -86,24 +86,21 @@ function gonoVote (array){
 
 
 //Problem-05: Text Analyzer for an AI Company
-
 function analyzeText(str){
-    // console.log(str);
+    
     if(typeof str !== 'string' || str.trim().length === 0)
         return "Invalid";
     let words = str.split(" ");
-    // return words;
+    
     let longtWord = words[0];
 
     for(let i =0; i < words.length; i++){
         if (words[i].length > longtWord.length)
             longtWord = words[i];
     }
-    // return longestWord;
-
-    let totalCharacterWithoutSpace = str.split(" ").join("").length;
     
-    return { longwords:longtWord, token: totalCharacterWithoutSpace };
+    let totalCharacter = str.split(" ").join("").length;
+    
+    return { longwords:longtWord, token: totalCharacter };
 }
-
 

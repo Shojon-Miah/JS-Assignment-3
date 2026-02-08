@@ -14,20 +14,22 @@ function analyzeText(str){
     }
     // return longestWord;
 
-    let totalCharacterWithoutSpace = str.split(" ").join("").length;
+    let totalCharacter = str.split(" ").join("").length;
     
-    return { longwords:longtWord, token: totalCharacterWithoutSpace };
+    return { longwords:longtWord, token: totalCharacter };
 }
 
 
 //console.log(analyzeText(1255));
-// console.log(analyzeText(""));
-// console.log(analyzeText("      "));
-// console.log(analyzeText("Programming is fun"));
+console.log(analyzeText(""));
+console.log(analyzeText("I am honest"));
+console.log(analyzeText("Programming is fun"));
+console.log(analyzeText("I   am honest"));
+console.log(analyzeText("I   am   a   student   "));
+
 // console.log(analyzeText("I am a little honest person"));
 // console.log(analyzeText("A quick brown fox"));
 // console.log(analyzeText("Hello world"));
-//console.log(analyzeText("I   am   a   student"));
 
 
 

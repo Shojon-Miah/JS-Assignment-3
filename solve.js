@@ -52,6 +52,7 @@ function finalScore(omr) {
 }
 
 
+
 function gonoVote (array){
     
     if (!Array.isArray(array)){
@@ -66,7 +67,7 @@ function gonoVote (array){
         {
             haCount++;
         }
-        else {
+        else if(vote === "na") {
             naCount++;
         }
     }
@@ -85,15 +86,16 @@ function analyzeText(str){
     if(typeof str !== 'string' || str.trim().length === 0)
         return "Invalid";
     let words = str.split(" ");
-   
+    
     let longtWord = words[0];
 
     for(let i =0; i < words.length; i++){
         if (words[i].length > longtWord.length)
             longtWord = words[i];
     }
-
-    let totalCharacterWithoutSpace = str.split(" ").join("").length;
     
-    return { longwords:longtWord, token: totalCharacterWithoutSpace };
+    let totalCharacter = str.split(" ").join("").length;
+    
+    return { longwords:longtWord, token: totalCharacter };
 }
+
