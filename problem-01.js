@@ -14,10 +14,10 @@ function newPrice(currentPrice, discount) {
     }
 }
 
-console.log(newPrice(1500, 20));
-console.log(newPrice(2000, -5));
-console.log(newPrice(1200, 35));
-console.log(newPrice("1000", 10));
+ console.log(newPrice(1500, 100));
+// console.log(newPrice(2000, -5));
+// console.log(newPrice(1200, 35));
+// console.log(newPrice("1000", 10));
 // console.log(newPrice(2100, 19.257));
 // console.log(newPrice(500, "5"));
 // console.log(newPrice(4590, 29));

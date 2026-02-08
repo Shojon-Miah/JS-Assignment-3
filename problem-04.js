@@ -13,7 +13,7 @@ function gonoVote (array){
         {
             haCount++;
         }
-        else {
+        else if(vote === "na") {
             naCount++;
         }
     }
@@ -27,9 +27,9 @@ function gonoVote (array){
 }
 
 
-// console.log(gonoVote(["ha", "ha", "ha", "na"]));
-// console.log(gonoVote(["ha", "na", "na"]));
-// console.log(gonoVote(["ha", "na", "ha", "na"]));
+console.log(gonoVote(["ha", "ha", "ha", "na"]));
+console.log(gonoVote(["ha", " ", "na"]));
+ console.log(gonoVote(["ha", "na", "ha", "na"]));
 // console.log(gonoVote("ha, na"));
 // console.log(gonoVote(125));
 
