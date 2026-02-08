@@ -3,16 +3,15 @@ function newPrice(currentPrice, discount) {
     if (!Number.isFinite(currentPrice) || !Number.isFinite(discount)) {
         return "Invalid";
     }
-    else if (currentPrice < 0 || discount > 100) {
+    else if (discount < 0 ||  discount > 100) {
         return "Invalid";
     }
     else {
         let discountAmount = (currentPrice * discount) / 100;
         let finalPrice = currentPrice - discountAmount;
-        return finalPrice = finalPrice.toFixed(3);
+        return finalPrice.toFixed(3);
     }
 }
-
 
 
 function  validOtp(otp){
