@@ -3,7 +3,7 @@ function newPrice(currentPrice, discount) {
     if (!Number.isFinite(currentPrice) || !Number.isFinite(discount)) {
         return "Invalid";
     }
-    else if (discount < 0 ||  discount > 100) {
+    else if (discount < 0 || discount > 100) {
         return "Invalid";
     }
     else {
@@ -14,12 +14,12 @@ function newPrice(currentPrice, discount) {
 }
 
 
-function  validOtp(otp){
+function validOtp(otp) {
 
-    if (typeof otp !== 'string'){
+    if (typeof otp !== 'string') {
         return "Invalid";
     }
-    else if (otp.length === 8 && otp.startsWith("ph-")){
+    else if (otp.length === 8 && otp.startsWith("ph-")) {
         return true;
     }
     else {
@@ -30,7 +30,7 @@ function  validOtp(otp){
 
 
 function finalScore(omr) {
-    
+
     if (typeof omr !== 'object' || omr === null || Array.isArray(omr)) {
         return "Invalid";
     }
@@ -53,21 +53,20 @@ function finalScore(omr) {
 
 
 
-function gonoVote (array){
-    
-    if (!Array.isArray(array)){
+function gonoVote(array) {
+
+    if (!Array.isArray(array)) {
         return "Invalid";
     }
 
     let haCount = 0;
     let naCount = 0;
 
-    for(let vote of array){
-        if(vote === "ha")
-        {
+    for (let vote of array) {
+        if (vote === "ha") {
             haCount++;
         }
-        else if(vote === "na") {
+        else if (vote === "na") {
             naCount++;
         }
     }
@@ -81,21 +80,39 @@ function gonoVote (array){
 }
 
 
-function analyzeText(str){
-    
-    if(typeof str !== 'string' || str.trim().length === 0)
+function analyzeText(str) {
+
+    if (typeof str !== 'string' || str.trim().length === 0)
         return "Invalid";
     let words = str.split(" ");
-    
+
     let longtWord = words[0];
 
-    for(let i =0; i < words.length; i++){
+    for (let i = 0; i < words.length; i++) {
         if (words[i].length > longtWord.length)
             longtWord = words[i];
     }
-    
+
     let totalCharacter = str.split(" ").join("").length;
-    
-    return { longwords:longtWord, token: totalCharacter };
+
+    return { longwords: longtWord, token: totalCharacter };
 }
 
+
+
+console.log(newPrice( 1547, 29));
+console.log(newPrice(2000, -5));
+
+console.log(validOtp("ac-123745"));
+console.log(validOtp("ph-10985"));
+console.log(validOtp("ph-1bc85"));
+
+console.log(finalScore({ right: 67, wrong: 23, skip: 10 }));
+console.log(finalScore({ right: 80, wrong: 25, skip: 0 }));
+
+console.log(gonoVote(["ha", "ha", "ha", "na"]));
+console.log(gonoVote(["ha", " ", "na"]));
+
+console.log(analyzeText(""));
+console.log(analyzeText("I am honest"));
+console.log(analyzeText("Programming is fun"));

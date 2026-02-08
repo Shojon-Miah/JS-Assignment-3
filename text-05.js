@@ -1,10 +1,11 @@
 //Problem-01: New Price for Eid Sale
+
 function newPrice(currentPrice, discount) {
 
     if (!Number.isFinite(currentPrice) || !Number.isFinite(discount)) {
         return "Invalid";
     }
-    else if (discount < 0 ||  discount > 100) {
+    else if (discount < 0 || discount > 100) {
         return "Invalid";
     }
     else {
@@ -16,12 +17,13 @@ function newPrice(currentPrice, discount) {
 
 
 //Problem-02: OTP Validation for Zapshift
-function  validOtp(otp){
 
-    if (typeof otp !== 'string'){
+function validOtp(otp) {
+
+    if (typeof otp !== 'string') {
         return "Invalid";
     }
-    else if (otp.length === 8 && otp.startsWith("ph-")){
+    else if (otp.length === 8 && otp.startsWith("ph-")) {
         return true;
     }
     else {
@@ -33,7 +35,7 @@ function  validOtp(otp){
 //Problem-03: BCS Final Score Calculator
 
 function finalScore(omr) {
-    // console.log(omr);
+   
     if (typeof omr !== 'object' || omr === null || Array.isArray(omr)) {
         return "Invalid";
     }
@@ -57,21 +59,20 @@ function finalScore(omr) {
 
 //Problem-04: Upcoming Gono Vote
 
-function gonoVote (array){
-    
-    if (!Array.isArray(array)){
+function gonoVote(array) {
+
+    if (!Array.isArray(array)) {
         return "Invalid";
     }
 
     let haCount = 0;
     let naCount = 0;
 
-    for(let vote of array){
-        if(vote === "ha")
-        {
+    for (let vote of array) {
+        if (vote === "ha") {
             haCount++;
         }
-        else {
+        else if (vote === "na") {
             naCount++;
         }
     }
@@ -86,21 +87,35 @@ function gonoVote (array){
 
 
 //Problem-05: Text Analyzer for an AI Company
-function analyzeText(str){
-    
-    if(typeof str !== 'string' || str.trim().length === 0)
+
+function analyzeText(str) {
+
+    if (typeof str !== 'string' || str.trim().length === 0)
         return "Invalid";
     let words = str.split(" ");
-    
+
     let longtWord = words[0];
 
-    for(let i =0; i < words.length; i++){
+    for (let i = 0; i < words.length; i++) {
         if (words[i].length > longtWord.length)
             longtWord = words[i];
     }
-    
+
     let totalCharacter = str.split(" ").join("").length;
-    
-    return { longwords:longtWord, token: totalCharacter };
+
+    return { longwords: longtWord, token: totalCharacter };
 }
 
+console.log(validOtp("ac-123745"));
+console.log(validOtp("ph-10985"));
+console.log(validOtp("ph-1bc85"));
+
+console.log(finalScore({ right: 67, wrong: 23, skip: 10 }));
+console.log(finalScore({ right: 80, wrong: 25, skip: 0 }));
+
+console.log(gonoVote(["ha", "ha", "ha", "na"]));
+console.log(gonoVote(["ha", " ", "na"]));
+
+console.log(analyzeText(""));
+console.log(analyzeText("I am honest"));
+console.log(analyzeText("Programming is fun"));
